@@ -1,0 +1,30 @@
+{
+    "name": "Todos",
+    "dockerComposeFile": "docker-compose.yaml",
+    "service": "server",
+    "workspaceFolder": "/home/node/app",
+
+    // Set *default* container specific settings.json values on container create.
+    "settings": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true,
+        "typescript.preferences.includePackageJsonAutoImports": "on",
+        "editor.codeActionsOnSave": {
+            "source.addMissingImports": true,
+            "source.fixAll.eslint": true
+        }
+    },
+
+    // Add the IDs of extensions you want installed when the container is created.
+    "extensions": ["dbaeumer.vscode-eslint", "esbenp.prettier-vscode", "ms-azuretools.vscode-docker"],
+
+    // Use 'forwardPorts' to make a list of ports inside the container available locally.
+    "forwardPorts": [3005],
+
+    // Use 'postCreateCommand' to run commands after the container is created.
+    // "postCreateCommand": "pnpm install",
+    "postAttachCommand": "pnpm dev",
+
+    // Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+    "remoteUser": "root"
+}
